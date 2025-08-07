@@ -1,0 +1,888 @@
+
+<html>
+
+<head>
+	<title>StellArc</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<style>
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Poppins', sans-serif;
+		font-weight: 600;
+	}
+	p, a, span, li {
+		font-family: 'Poppins', sans-serif;
+		font-weight: 400;
+	}
+	html {
+		scroll-behavior: smooth;
+  }
+  .whatsapp-container {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 9999;
+}
+.whatsapp-icon {
+	width: 60px;
+	cursor: pointer;
+}
+.chat-box {
+	width: 350px;
+	display: none;
+	margin-top: 10px;
+	background-color: #F7931E;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.chat-box input {
+	width: 330px;
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+	margin-right: 5px;
+	outline: none;
+}
+.chat-box button {
+	width: 330px;
+	padding: 8px 12px;
+	background-color: rgba(3, 34, 36, 0.726);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+/* Floating animation */
+@keyframes floatUpDown {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-6px);
+	}
+	}
+	.animate-on-scroll {
+		opacity: 0;
+		transform: translateY(40px);
+		transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+	}
+	.animate-on-scroll.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	#navToggle .menu-label {
+		color: orange; /* change this to your preferred color */
+		font-size: 16px;
+		font-weight: bold;
+		vertical-align: middle;
+	}
+	@media screen and (min-width: 737px) {
+		#navToggle {
+			display: none; /* hide the hamburger toggle on desktop */
+		}
+	}
+	</style>
+	</head>
+
+<div class="whatsapp-container">
+	<img src="images/WhatsApp.svg" alt="Chat with us on WhatsApp" class="whatsapp-icon" onclick="toggleChat()" />
+	<div id="whatsapp-chat" class="chat-box">
+		<input type="text" placeholder="Type your message..." />
+		<button onclick="sendMessage()">Send</button>
+	</div>
+</div>
+
+		<!-- Header -->\
+		<div id="header-wrapper">
+			<header id="header" class="container">
+				
+
+				<!-- Logo -->
+				<div id="logo">
+					<img src="images/StellArc.jpg" alt="" class="logo-round" />
+					</a>
+					<style>
+						.logo-round {
+							width: 300px;
+							height: 300px;
+							border-radius: 50%;
+							object-fit: cover;
+							box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+						}
+						@media screen and (max-width:768px){
+							.logo-container{
+								height:50;
+								width:50;
+								margin-top:10px;
+							}
+						}
+						@media screen and (max-width: 1024px) {
+							.stellarc-mission {
+								display: none;
+							}
+						}
+
+						#header-wrapper {
+							background-color: orange;
+							border-bottom-left-radius: 80px;
+							border-bottom-right-radius: 80px;
+						}
+						#main-wrapper {
+							background-image: url('images/impact 4.jpg');
+							background-size: cover;
+							background-position: center;
+							background-repeat: no-repeat;
+							background-attachment: fixed;
+							/* Optional: Makes the background stay in place while scrolling */
+							min-height: 100vh;
+						}
+
+						.custom-box {
+							background-color: #0E2C36;
+							/* dark teal */
+							color: #FDFCF9;
+							/* cream text */
+							padding: 40px;
+							border-radius: 20px;
+							box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+							margin: 40px 0 5px 5px;
+							max-width: 900px;
+							border-left: 5px solid #F7931E;
+							/* subtle orange accent */
+						}
+
+						.custom-box h2 {
+							color: #063957;
+							/* header in orange */
+						}
+		
+
+					</style>
+
+				</div>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li class="current"><a href="index.html">Home</a></li>
+						<li>
+							<a href="#">Services</a>
+							<ul>
+								<li><a href="#reliable-service">Professional Service</a></li>
+								<li><a href="#interstellar">InterstellarConnect</a></li>
+							</ul>
+						</li>
+						<li><a href="left-sidebar.html">About StellArc</a></li>
+						<li><a href="right-sidebar.html">InterstellarCommunities</a></li>
+					</ul>
+				</nav>
+
+
+				<div class="stellarc-mission">
+					<h4>StellArc is a future-driven electrical and energy solutions company pioneering the next era of smart infrastructure across Nigeria.</h4>
+					<p>
+						We are committed to delivering safe, intelligent, and sustainable power systems — from homes to industrial grids — using cutting-edge technologies, AI-powered control systems, and clean energy innovations.
+					</p>
+					<p>At StellArc, we’re not just wiring buildings — we’re electrifying the future.</p>
+				</div>
+			</header>
+		</div>
+		<style>
+		.stellarc-mission {
+			max-width: 800px;
+			margin: -200px auto 40px auto;
+			position: relative;
+			left: 250px; /* Adjust this value */
+			padding: 20px 30px;
+			text-align: left;
+			color: #fff;
+			font-size: 16px;
+			background-color: rgba(0, 0, 0, 0.4);
+			border-radius: 15px;
+		}
+		/* You can also include the responsive part if you want */
+		@media (max-width: 768px) {
+			.stellarc-mission {
+				display: none;
+			}
+			
+		}
+		</style>
+
+		<!-- Banner -->
+		<div id="banner-wrapper">
+			<div id="banner" class="box container animate-on-scroll visible">
+				<div class="row">
+					<div class="col-7 col-12-medium banner-text">
+						<h2>Powering Homes. Empowering lives</h2>
+						<p>Professional Electrical Installations and Maintenance for Homes, Offices & Industries</p>
+					</div>
+					<div class="col-5 col-12-medium banner-buttons">
+						<ul>
+							<li><a href="#features-wrapper" class="button large icon solid fa-bolt">Our Services</a></li>
+							<li><a href="#contact-section" class="button alt large icon solid fa-phone">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Banner Styling -->
+		<style>
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.animate-on-scroll {
+				opacity: 0;
+				transform: translateY(30px);
+				transition: all 0.8s ease-out;
+			}
+
+			.animate-on-scroll.visible {
+				animation: fadeInUp 1s ease-out forwards;
+				animation-fill-mode: forwards;
+			}
+
+			#banner-wrapper {
+				background-color: #0E2C36;
+				/* dark teal */
+				padding: 60px 0;
+			}
+
+			#banner h2,
+			#banner p {
+				color: #0E2C36;
+				margin-bottom: 10px;
+			}
+
+			#banner {
+				padding: 60px 0;
+				background: 
+				linear-gradient(to bottom, rgba(14, 44, 54, 0.85) 0%, rgba(14, 44, 54, 0.15) 50%, rgba(14, 44, 54, 0.85) 100%),
+				url('images/family3.png') no-repeat center center;
+				animation: gradientMove 15s ease infinite;
+				position: relative;
+				z-index: 2;
+			}
+
+			#banner h2 {
+				font-size: 3rem;
+				font-weight: bold;
+				color: #F7931E;
+				/* StellArc Orange */
+				text-shadow: 1px 1px 2px #000;
+			}
+
+			#banner p {
+				font-size: 1.2rem;
+				color: #f8f8f7;
+				margin-top: 10px;
+				text-shadow: 3px 3px 4px #0a0a0a;
+			}
+
+			.banner-buttons .button {
+				background-color: #F7931E;
+				border: none;
+				color: rgb(250, 248, 248);
+				padding: 12px 25px;
+				border-radius: 30px;
+				font-size: 1rem;
+				transition: 0.3s;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+			}
+
+			.banner-buttons .button:hover {
+				background-color: #e67e22;
+				transform: scale(1.05);
+			}
+
+			#banner-logo-overlay {
+				position: absolute;
+				top: 50%;
+				left: 70%;
+				width: 300px;
+				height: 300px;
+				background: url('StellArc.jpg') no-repeat center center;
+				background-size: 100% auto;
+				opacity: 0.07;
+				z-index: 6;
+				transform: translate(-50%, -50%);
+			}
+			@media (min-width: 768px) {
+				#banner-logo-overlay {
+					width: 450px;
+					height: 450px;
+					left: 65%; /* Better centering for larger screens */
+				}
+			}
+
+			#banner {
+				position: relative;
+				z-index: 2;
+			}
+
+			.banner-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			@media (min-width: 1024px) {
+				#banner {
+					 background-position:  center;
+					 background-size: cover; /* Best for full stretch */
+					 width: 90%;
+					 height: 70vh;
+				}
+			}
+			
+			@media (max-width: 767px) {
+				#banner {
+					background:
+					linear-gradient(to bottom, rgba(14, 44, 54, 0.85) 0%, rgba(14, 44, 54, 0.15) 50%, rgba(14, 44, 54, 0.85) 100%),
+					url('images/photo1.jpeg') no-repeat center center;
+					background-size: cover;
+				}
+			}
+
+			@keyframes gradientMove {
+				0% {
+					background-position: 0% 50%;
+				}
+
+				50% {
+					background-position: 100% 50%;
+				}
+
+				100% {
+					background-position: 0% 50%;
+				}
+			}
+
+		</style>
+
+
+		<!-- Features -->
+		<div id="features-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-4 col-12-medium">
+
+						<!-- Box -->
+						 <section id="reliable-service" class="box feature custom-box animate-on-scroll">
+							<a href="reliable.html" class="image featured"><img src="images/nnpc.webp" alt="" /></a>
+							<div class="inner">
+								<header>
+									<h2>Reliable Power. Professional Service.</h2>
+									<p></p>
+								</header>
+								<p>
+									StellArc provides reliable electrical installation and Maintenance services for homes, offices,
+									estates, and commercial facilities across Nigeria.
+									Our certified professionals are committed to delivering safe, modern, and
+									energy-efficient solutions tailored to your needs — whether for new constructions,
+									upgrades, or full rewiring projects.
+									<li>Our services include:</li>
+									<li>Circuit design and installation</li>
+									<li>Lighting, sockets, and breaker setup to real    estate standards</li>
+									<li>Smart system integration</li>
+									<li>Durable, clean electrical workmanship</li>
+									<li>StellArc delivers with precision, professionalism,    and a focus on long-term</li>
+									<li>performance — powering homes and businesses nationwide.</li>
+									</p>
+								<style>
+								.custom-box {
+										background-color: #0E2C36;
+										/* dark teal */
+										color: #FDFCF9;
+										/* cream text */
+										padding: 40px;
+										border-radius: 20px;
+										box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+										margin: 40px auto;
+										max-width: 900px;
+										border-left: 5px solid #F7931E;
+										/* subtle orange accent */
+									}
+
+									.custom-box h2 {
+										color: #F7931E;
+										/* header in orange */
+									}
+
+									.custom-box p {
+										font-size: 15px;
+										/* slightly smaller text */
+										line-height: 1.4;
+										/* tighter line spacing */
+										margin-bottom: 0.8em;
+									}
+								</style>
+
+							</div>
+						</section>
+
+					</div>
+					<div class="col-4 col-12-medium">
+
+						<!-- Box -->
+						<section class="box feature custom-box">
+							<a href="#" class="image featured"><img src="images/dark teal.png" alt="" /></a>
+							<div class="inner">
+								</a>
+
+								<header>
+									<h2>🔧 Sales & Installation Services </h2>
+								</header>
+								<h4>Electrical Supply & Installation Services</h4>
+								<p>Electrical wiring, fittings, and maintenance.
+									Professional handling of both domestic and commercial electrical projects.</p>
+									<h4>CCTV Camera Systems</h4>
+									<p>Sales, installation, and configuration for homes, offices, schools, churches, and business premises.
+										Secure your environment with smart surveillance.</p>
+										<h4>Solar Street Lights</h4>
+										<p>Energy-efficient lighting solutions for streets, estates, compounds, and communities.
+											Reliable installation and maintenance support.</p>
+								<style>
+									.custom-box {
+										background-color: #0E2C36;
+										/* dark teal */
+										color: #FDFCF9;
+										/* cream text */
+										padding: 40px;
+										border-radius: 20px;
+										box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+										margin: 40px auto;
+										max-width: 900px;
+										border-left: 5px solid #F7931E;
+										/* subtle orange accent */
+									}
+
+									.custom-box h2 {
+										color: #F7931E;
+										/* header in orange */
+									}
+
+									.custom-box p {
+										font-size: 15px;
+										/* slightly smaller text */
+										line-height: 1.4;
+										/* tighter line spacing */
+										margin-bottom: 0.8em;
+									}
+									.custom-box h4 {
+										color: #ca7c22;
+										/* header in orange */
+									}
+
+								</style>
+
+							</div>
+						</section>
+
+					</div>
+					<div class="col-4 col-12-medium">
+
+						<!-- Box -->
+						<section class="box feature custom-box">
+							<a href="#" class="image featured"><img src="images/solar stellarc.webp" alt="" /></a>
+							<div class="inner">
+								<header>
+									<h2>Solar Panel & installation Services</h2>
+								</header>
+								<p>We are committed to a sustainable future.
+									Our team of trained professionals provides expert services in the installation of solar panels
+									and solar energy systems for homes and commercials spaces.
+									we help our cilents switch to grren , cost effective power solutions by delivering efficient , high -quality
+									solar systems tailored to their energy needs </p>
+									<h2>Go solar. Go smart. Go StellArc</h2></div>
+								<style>
+									.custom-box {
+										background-color: #0E2C36;
+										/* dark teal */
+										color: #FDFCF9;
+										/* cream text */
+										padding: 40px;
+										border-radius: 20px;
+										box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+										margin: 40px auto;
+										max-width: 900px;
+										border-left: 5px solid #F7931E;
+										/* subtle orange accent */
+									}
+
+									.custom-box h2 {
+										color: #F7931E;
+										/* header in orange */
+									}
+
+									.custom-box p {
+										font-size: 15px;
+										/* slightly smaller text */
+										line-height: 1.4;
+										/* tighter line spacing */
+										margin-bottom: 0.8em;
+										/* Container style for smooth animation */
+										.box.feature.custom-box {
+											overflow: hidden;
+											position: relative;
+											/* Optional: for subtle 3D pop effect */
+											transform-style: preserve-3d;
+										}
+									}
+									.box.feature.custom-box { overflow: hidden; position: relative; }
+									.box.feature.custom-box img {
+										width: 100%; transition: transform .5s ease, box-shadow .5s ease;
+									}
+									.box.feature.custom-box:hover img {
+										transform: scale(1.08); 
+										box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+									}
+									.box.feature.custom-box {
+										opacity: 0; transform: translateY(30px);
+										transition: transform .6s ease-out, opacity .6s ease-out;
+									}
+									.box.feature.custom-box.visible {
+										opacity: 1; transform: translateY(0);
+										}
+
+								</style>
+							</div>
+						</section>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main-wrapper">
+			<div class="container">
+				<div class="row gtr-200">
+					<div class="col-4 col-12-medium">
+
+						<!-- Sidebar -->
+						<div id="sidebar">
+							<section class="widget thumbnails">
+								<h3>Interesting stuff</h3>
+								<div class="grid">
+									<div class="row gtr-50">
+										<div class="col-6">
+											<a href="https://whatsapp.com/channel/0029VafGnG0Fi8xelpQ6SY0G" class="image fit">
+												<img src="images/interstellar.jpeg" alt="" class="rotate-img" />
+											</a>
+										</div>
+										<div class="col-6">
+											<a href="https://asowo12345.pythonanywhere.com/" class="image fit">
+												<img src="images/moko.jpg" alt="" class="rotate-img" />
+											</a>
+										</div>
+										<div class="col-6">
+											<a href="https://www.facebook.com/profile.php?id=61565733906541" class="image fit">
+												<img src="images/interstellar_instagram.jpg" alt="" class="rotate-img" />
+											</a>
+										</div>
+										<div class="col-6">
+											<a href="https://www.instagram.com/interstellar_channel?igsh=eWN0cTMxdzc5MXRi" class="image fit">
+												<img src="images/interstellar_map.jpg" alt="" class="rotate-img" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<style>
+								.rotate-img {
+									width: 100%;
+									height: auto;
+									border-radius: 50%; /* Makes it circular */
+									animation: spin 10s linear infinite;
+								}
+								@keyframes spin {
+									from {
+										transform: rotate(0deg);
+									}
+									to {
+										transform: rotate(360deg);
+									}
+									}
+									</style>
+							</section>
+
+
+						</div>
+
+					</div>
+					<div class="col-8 col-12-medium imp-medium">
+
+						<!-- Content -->
+						 <section id="interstellar" class="last">
+								<h2>Welcome to Interstellar — Connecting Communities, Creating Opportunities</h2>
+								<p>
+									Along the Sagamu–Papalanto road are countless towns filled with untapped ideas, energy, and potential. Interstellar is here to unite them.
+									We're building a powerful bridge — not just between towns, but from these communities to the rest of Nigeria and the world. Interstellar is a market-driven ecosystem, where local creators, businesses, and consumers come together to test, grow, and launch new ideas on a national stage
+								</p>
+								<p>
+									With dedicated admins in each community, every voice matters. Every product has a chance. And every town has a role to play in shaping the future.
+									This isn’t just a platform — it’s a movement for transformation.
+								</p>
+								<a href="right-sidebar.html" class="button icon solid fa-arrow-circle-right">Continue Reading</a>
+							</section>
+						</div>
+						<!-- Place styles in head or bottom of body -->
+						 <style>
+						 #interstellar h2 {
+							color: #F7931E;
+						}
+						#interstellar p {
+							font-size: 15px;
+							line-height: 1.4;
+							margin-bottom: 0.8em;
+							color: #ffffff;
+							font-weight: 550;
+						}
+							</style>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div id="footer-wrapper">
+			<footer id="footer" class="container">
+				<div class="row">
+					<div class="col-3 col-6-medium col-12-small">
+
+						<!-- Links -->
+						<section class="widget links">
+							<h3>About StellArc</h3>
+							<ul class="style2">
+								<li><a href="#">Smart Electrical Solutions</a></li>
+								<li><a href="#">CCTV & Surveillance Experts</a></li>
+								<li><a href="#">Solar Street Light Install</a></li>
+								<li><a href="#">Reliable Power Upgrades</a></li>
+							</ul>
+						</section>
+						<style>
+						#footer-wrapper {
+							background-color: #012f3b;
+							color: white;
+							padding: 40px 0;
+						}
+						#footer h3 {
+							color: orange;
+						}
+						#footer a {
+							color: white;
+							text-decoration: none;
+						}
+						#footer a:hover {
+							text-decoration: underline;
+						}
+
+						</style>
+
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
+
+						<style>
+						.widget.contact-form form {
+							display: flex;
+							flex-direction: column;
+						}
+						.widget.contact-form label { margin-top: 10px; }
+						.widget.contact-form input,
+						.widget.contact-form textarea {
+							padding: 8px;
+							font-size: 14px;
+							margin-top: 4px;
+						}
+						.captcha-group {
+							display: flex;
+							align-items: center;
+							margin-top: 10px;
+						}
+						.captcha-box {
+							font-family: monospace;
+							letter-spacing: 3px;
+							background: #f0f0f0;
+							padding: 6px 10px;
+							margin-right: 8px;
+						}
+						#captcha-refresh {
+							cursor: pointer;
+						}
+						#cf-status { margin-top: 10px; font-weight: bold; }
+						 .widget.contact-form h3,
+						 .widget.contact.last h3 {
+							color: #C76E00;
+						}
+						</style>
+
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
+
+						<!-- Contact -->
+						<section id="contact-section"
+						class="widget contact last">
+							<h3>Contact Us</h3>
+							<ul>
+								<li><a href="stellarofficial@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+
+								<li><a href="https://www.tiktok.com/@stellarc.ng?_t=ZS-8ydVc8MhXUu&_r=1" class="icon brands fa-tiktok"><span class="label">TikTok</span></a></li>
+								</li>
+								<li><a href="https://www.facebook.com/profile.php?id=61578969909169" class="icon brands fa-facebook-f"><span
+											class="label">Facebook</span></a></li>
+								<li><a href="https://www.instagram.com/stellarc.ng?igsh=cnhyaDZ2Y3BidTlm" class="icon brands fa-instagram"><span
+											class="label">Instagram</span></a></li>
+								
+							<p>
+								21 Eleworo<br />
+								Papalanto–Sagamu Road<br />
+								Ofada, Mowe, Ogun State<br />
+								<a href="tel:+2348082541515">+234 808 254 1515</a><br />
+								<a href="tel:+2349126589742">+234 912 658 9742</a><br />
+								<a href="tel:+2349126589742">+234 802 689 5980</a>
+
+							</p>
+						</section>
+
+					</div>
+				</div>
+
+			</footer>
+		</div>
+
+	</div>
+	<style>
+		#header-wrapper {
+			background-color: orange;
+		}
+
+		body,
+		#page-wrapper,
+		#main {
+			background-color: rgba(1, 53, 59, 0.979) !important;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: #012f3b;
+			/* or just remove this line completely */
+		}
+	</style>
+
+	<!-- Scripts -->
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<!-- Custom Scroll Animation Script -->
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const observer = new IntersectionObserver(entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting || entry.intersectionRatio > 0) {
+						entry.target.classList.add("visible");
+					}
+				});
+			});
+			document.querySelectorAll('.animate-on-scroll').forEach(el => {
+				observer.observe(el);
+			});
+		}); // ✅ this closes the DOMContentLoaded function
+	</script>
+	<script>
+	(function(){
+		const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+		function genCaptcha() {
+			let s = '';
+			for (let i = 0; i < 5; i++) {
+				s += chars.charAt(Math.floor(Math.random() * chars.length));
+			}
+			return s;
+		}
+		let currentCaptcha = genCaptcha();
+		const disp = document.getElementById('captcha-display');
+		const refresh = document.getElementById('captcha-refresh');
+		const form = document.getElementById('footerContactForm');
+		const status = document.getElementById('cf-status');
+		function setNewCaptcha(){
+			currentCaptcha = genCaptcha();
+			disp.textContent = currentCaptcha;
+		}
+		refresh.addEventListener('click', setNewCaptcha);
+		form.addEventListener('submit', e => {
+			e.preventDefault();
+			status.textContent = '';
+			const userCaptcha = form.captcha.value.trim().toUpperCase();
+			if (userCaptcha !== currentCaptcha) {
+				status.textContent = '❌ CAPTCHA did not match. Try again!';
+				setNewCaptcha();
+				form.captcha.value = '';
+				return;
+			}
+
+    // TODO: connect to backend later
+    status.textContent = '✅ Looks good! Sending…';
+    // we’d send form data here via AJAX
+  });
+
+  // initialize on load
+  setNewCaptcha();
+})();
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const boxes = document.querySelectorAll('.box.feature.custom-box');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    boxes.forEach(el => observer.observe(el));
+  });
+</script>
+<script>
+function toggleChat() {
+  const chatBox = document.getElementById('whatsapp-chat');
+  chatBox.style.display = chatBox.style.display === 'block' ? 'none' : 'block';
+}
+
+function sendMessage() {
+  const input = document.querySelector('#whatsapp-chat input');
+  const message = input.value.trim();
+  if (message) {
+    const phoneNumber = "2349126589742"; // Your number
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+    input.value = ""; // Optional: clear input
+  }
+}
+</script>
+
+
+</body>
+
+</html>
